@@ -1,0 +1,105 @@
+:: StoryTitle
+Gra tekstowa
+
+
+:: StoryData
+{
+  "ifid": "5FC4CAED-F4F6-49C2-8E23-1A9D294EC761",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Start",
+  "zoom": 0.6
+}
+
+
+:: Nie/Dym {"position":"2375,625","size":"100,100"}
+Wchodzisz na szczyt.
+Widzisz czarny dym, który zasłania ci podnóże góry.
+Możesz zejść stromym zboczem albo łagodną ścieżką.
+Patrzysz w dół. Jeśli są tam ludzie, to potrzebują pomocy.
+Ale czy chcesz dla nich ryzykować?
+
+[[Tak/Upadek]]
+
+[[Nie/Zgliszcza]]
+
+
+:: Nie/Karawana {"position":"2975,725","size":"100,100"}
+Spotykasz karawanę.
+Jakiś człowiek schodzi ze swojego wozu i podchodzi do ciebie.
+Nie znasz go.
+Czy chcesz go zaatakować?
+
+[[Nie/Podróż]]
+
+[[Tak/Morderstwo]]
+
+
+
+:: Nie/Podróż {"position":"3175,825","size":"100,100"}
+
+
+
+:: Nie/Wilki {"position":"2575,725","size":"100,100"}
+Czekasz na skale i wypijasz wodę z bukłaka.
+Zaczyna się świt. Słyszysz szelest w krzakach. Wychodzi z nich para wilków.
+Czy z nimi walczysz?
+
+[[Tak/Rozszarpany]]
+
+[[Nie/Dym]]
+
+
+:: Nie/Zgliszcza {"position":"2175,525","size":"100,100"}
+Łagodna ścieżka zajęła ci sporo do przejścia. 
+Nie przeszkadza ci to. Najważniejsze, że jesteś bezpieczny.
+Ciągły marsz wywołuje u ciebie poczucie głodu.
+Widzisz palące się zgliszcza jakiejś osady. To z nich leciał dym.
+Wejcie do nich jest niebezpieczne, ale może znajdziesz  jakieś jedzenie.
+Czy chcesz wejść między płonące ruiny?
+
+
+
+
+:: Start {"position":"2975,525","size":"100,100"}
+Jesteś samotnym wędrowcem.
+Stoisz w ciemnej dolinie.
+Jesteś zmęczony. Nie wiesz  gdzie jesteś.
+Czy chcesz iść dalej?
+
+[[Nie/Karawana]]
+
+[[Tak/Dziecko]]
+
+
+:: Tak/Dziecko {"position":"2975,325","size":"100,100"}
+
+
+
+:: Tak/Morderstwo {"position":"2775,825","size":"100,100"}
+Nie spodziewał się ciosu. 
+Zanim reszta podróżnych zrozumiała, co się stało, zabrałeś mu nóż i wodę, po czym uciekłeś spoza światła ich pochodni na zbocze górskie.
+Robiłeś gorsze rzeczy, by przeżyć.
+Czy chcesz wspiąć się na szczyt i rozejrzeć po okolicy?
+
+[[Tak/Wioska pod mgłą]]
+
+[[Nie/Wilki]]
+
+
+:: Tak/Rozszarpany {"position":"2375,825","size":"100,100"}
+Pierwszy wilk wyje z bólu, gdy wbijasz nóż w jego bok.
+Nie możesz wyjąć ostrza z jego żeber.
+Pojawiają się kolejne.
+Nie dasz rady.
+
+Koniec.
+
+
+:: Tak/Upadek {"position":"2175,725","size":"100,100"}
+Nie byłeś przygotowany na taki wysiłek. Ciągła walka i ucieczka zabrały ci resztki energii.
+Spadłeś i nawet nie zdążyłeś poczuć uderzenia.
+
+
+:: Tak/Wioska pod mgłą {"position":"2550,925","size":"100,100"}
+

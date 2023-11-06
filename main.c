@@ -70,28 +70,11 @@ void start_gry(char answer)
     printf("Jesteś samotnym wędrowcem.\n");
     printf("Stoisz w ciemnej dolinie.\n");
     printf("Jesteś zmęczony. Nie wiesz gdzie jesteś.\n");
-    printf("Czy chcesz iść dalej?\n");
-    answer = yesno(answer);
-    if (answer == 't')      
-    tak_dziecko(answer);
-    else
-    nie_karawana(answer);
-
-}
-
-void odmowa_startu(char answer)
-{
-    printf("odmowa startu\n");
-    rekursywne_oczekiwanie_na_start(answer);
-}
-
-void nie_karawana(char answer)
-{
-    printf("Spotykasz karawanę.\n");
+    printf("Nadjeżdża karawana.\n");
     printf("Jakiś człowiek schodzi ze swojego wozu i podchodzi do ciebie.\n");
     printf("Nie znasz go.\n");
+    printf("Pewnie chce zrobić ci krzywdę\n");
     printf("Czy chcesz go zaatakować?\n");
-
     answer = yesno(answer);
     if (answer == 't')      
     tak_morderstwo(answer);
@@ -99,9 +82,10 @@ void nie_karawana(char answer)
     nie_podróż(answer);
 }
 
-void tak_dziecko(char answer)
+void odmowa_startu(char answer)
 {
-    printf("dziecko\n");
+    printf("odmowa startu\n");
+    rekursywne_oczekiwanie_na_start(answer);
 }
 
 void tak_morderstwo(char answer)

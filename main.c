@@ -2,7 +2,8 @@
 #include<string.h>
 #include<stdio.h>
 
-int TakCzyNie();
+int InputReader();
+int InputValidation();
 
 int main(){
 
@@ -10,25 +11,14 @@ int odpowiedz = 2;
 
 printf("\nStart programu\n");
 
-odpowiedz = TakCzyNie();
+odpowiedz = InputValidation();
 printf("\ndebug  %d\n", odpowiedz);
-switch (odpowiedz){
-
-case 0:
-    printf("nieodp");
-    break;
-case 1:
-    printf("takodp");
-    break;
-default:
-    printf("zlaodp");
-}
 
 
 return 0;
 }
 
-int TakCzyNie()
+int InputReader()
 {
     char userInput[10];
     scanf("%9s", userInput);
@@ -38,4 +28,23 @@ int TakCzyNie()
         return 0;
     else
         return 2;
+}
+
+int InputValidation()
+{
+    int inputValue;
+    inputValue = InputReader();
+    switch(inputValue)
+    {
+    case 0:
+        return 0;
+        break;
+    case 1:
+        return 1;
+        break;
+    default:
+        printf("\nZly format odpowiedzi, wpisz odpowiedz ponownie [tak/nie]\n");
+        return InputValidation();
+    }
+
 }

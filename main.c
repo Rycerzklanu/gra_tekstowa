@@ -30,7 +30,6 @@ void treeLoader(struct TreeNode** root, int identifiers[], const char* messages[
 int InputReader();
 int InputValidation();
 
-//sekcja kodu odpowiedzialna za losowe zakończenie gry przy spotkaniu rekina na plaży i opcji braku walki
 int main(){
 struct TreeNode* root = NULL;
 

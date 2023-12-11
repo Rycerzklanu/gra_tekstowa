@@ -12,6 +12,15 @@ Gra tekstowa rewrite
 }
 
 
+:: 10%/Rekin skacze z wody {"position":"637.5,625","size":"100,100"}
+Nagle rekin wyskakuje z wody i cie zjada.
+Przegrales.
+
+
+:: 90%/Nic się nie dzieje {"position":"762.5,625","size":"100,100"}
+- 
+
+
 :: Nie/Dom {"position":"300,500","size":"100,100"}
 To była dobra decyzja.
 Wróciłeś do domu cały i zdrowy.
@@ -19,9 +28,10 @@ Wygrałeś.
 
 
 :: Nie/Opalanie {"position":"700,500","size":"100,100"}
-Po co ktoś miałby walczyć z rekinem w wodzie?
-Opalasz się na plaży i wypoczywasz.
-Wygrałeś.
+Nie chcesz walczyć z rekinem, zostałeś na plaży się poopalać.
+
+[[10%/Rekin skacze z wody]]
+[[90%/Nic się nie dzieje]]
 
 
 :: Nie/Rekin {"position":"600,300","size":"100,100"}
@@ -50,8 +60,7 @@ Czy chcesz z nim walczyć?
 
 :: Tak/Przegrałeś1 {"position":"100,500","size":"100,100"}
 Niespodziewanie niedźwiedź okazał się silniejszy.
-Przegrałeś. 
-
+Przegrałeś.
 
 
 :: Tak/Przegrałeś2 {"position":"500,500","size":"100,100"}

@@ -6,6 +6,7 @@ enum Odpowiedzi {
     NIE = 0,
     TAK = 1,
     POWROT = 2,
+    WYJSCIE = 3,
 };
 
 //drzewo binarne, pozwalające na efektywne "podróżowanie" po strukturze gry
@@ -29,8 +30,11 @@ void treeLoader(struct TreeNode** root, int identifiers[], const char* messages[
 int InputReader();
 int InputValidation();
 
+//sekcja kodu odpowiedzialna za losowe zakończenie gry przy spotkaniu rekina na plaży i opcji braku walki
 int main(){
 struct TreeNode* root = NULL;
+
+int zakonczenie;
 
 int identifiers[] = {4,2,6,1,3,5,7};
 const char* messages[] = 
@@ -38,17 +42,18 @@ const char* messages[] =
             //start
             "Czy chcesz zaczac gre?",
             //start->tak
-            "Idziesz przez ciemny las, spotykasz niedzwiedzia, czy chcesz z nim walczyc?",
+            "Idziesz przez ciemny las i spotykasz niedzwiedzia, czy chcesz z nim walczyc?",
             //start->nie
             "Nigdy nie miales prawdziwego wyboru. Idziesz na plazę i spotykasz rekina, czy chcesz z nim walczyc?",
             //start->tak->tak
-            "Niespodziewanie przegrales z niedzwiedziem",
+            "Niespodziewanie niedzwiedz okazal sie silniejszy.\nPrzegrales.\nWpisz 'powrot' by cofnac sie o jeden krok, lub 'wyjdz', by wyjsc z gry",
             //start->tak->nie
-            "To byla dobra decyzja, wrociles do domu i poszedles spac",
+            "To byla dobra decyzja, wrociles do domu caly i zdrowy.\nWygrales.\nWpisz 'powrot', by cofnac sie o jeden krok, lub 'wyjdz', by wyjsc z gry",
             //start->nie->tak
-            "Niespodziewanie przegrales z rekinem",
+            "Niespodziewanie rekin ma ostrzejsze zeby od ciebie i cie zjada.\nPrzegrales.\nWpisz 'powrot' by cofnac sie o jeden krok, lub 'wyjdz', by wyjsc z gry",
+
             //start->nie->nie
-            "To byla dobra decyzja, zostales na plazy by sie poopalac"
+            "Nie chcesz walczyc z rekinem, zostales na plazy sie poopalac"
         };
 //inicjalizacja drzewa
 treeLoader(&root, identifiers, messages, NULL, sizeof(identifiers) / sizeof(identifiers[0]));
@@ -57,23 +62,38 @@ treeLoader(&root, identifiers, messages, NULL, sizeof(identifiers) / sizeof(iden
 while (root != NULL) 
 {
 printf("\n%s ", root->message);
+ if (root->identifier == 7)
+          {
+              
+              zakonczenie = rand() % 10;
+              switch (zakonczenie) {
+                case 0:
+                  printf("\nNagle rekin wyskoczyl z wody i cie zjadl.\nPrzegrales.\nWpisz 'powrot' by cofnac sie o jeden krok, lub 'wyjdz', by wyjsc z gry ");
+                  break;
+                default:
+                  printf("\nWygrales.\nWpisz 'powrot', by cofnac sie o jeden krok, lub 'wyjdz', by wyjsc z gry ");
+                  break;
+              
+              }
+          }
+
+
 odpowiedz = InputValidation();
-printf("\ndebug  %d\n", odpowiedz);
-        if(root->left == NULL)
-        {
-            printf("\nlewa galaz pusta");
-        }
         if (odpowiedz == TAK && root->left != NULL)
         {
             root = root->left;
         }
         else if (odpowiedz == NIE && root->right != NULL)
         {
-            root = root->right; 
+            root = root->right;
         }
         else if (odpowiedz == POWROT && root->parent != NULL)
         {
             root = root->parent;         
+        }
+        else if (odpowiedz == WYJSCIE)
+        {
+            exit(0);
         }
         else 
             break;
@@ -93,6 +113,8 @@ int InputReader()
         return 1;
     else if (strcmp(userInput, "powrot") == 0)
         return 2;
+    else if(strcmp(userInput, "wyjdz") == 0)
+        return 3;
     else
         return -1;
 }
@@ -112,6 +134,9 @@ int InputValidation()
     case 2:
         return POWROT;
         break;
+    case 3:
+      return WYJSCIE;
+      break;
     default:
         printf("\nZly format odpowiedzi, wpisz odpowiedz ponownie [tak/nie]\n");
         return InputValidation();

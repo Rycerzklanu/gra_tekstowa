@@ -1,0 +1,59 @@
+:: StoryTitle
+Gra tekstowa rewrite
+
+
+:: StoryData
+{
+  "ifid": "29382EF9-F180-47F9-8D6F-A90E37943D60",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Nie/Dom {"position":"300,500","size":"100,100"}
+To była dobra decyzja.
+Wróciłeś do domu cały i zdrowy.
+Wygrałeś.
+
+
+:: Nie/Opalanie {"position":"700,500","size":"100,100"}
+Po co ktoś miałby walczyć z rekinem w wodzie?
+Opalasz się na plaży i wypoczywasz.
+Wygrałeś.
+
+
+:: Nie/Rekin {"position":"600,300","size":"100,100"}
+Nigdy nie miałeś wyboru.
+Idziesz na plażę i widzisz w wodzie rekina.
+Czy chcesz z nim walczyć?
+
+[[Tak/Przegrałeś2]]
+[[Nie/Opalanie]]
+
+
+:: Start {"position":"400,200","size":"100,100"}
+Czy chcesz zacząć grę?
+
+[[Tak/Niedźwiedź]]
+[[Nie/Rekin]]
+
+
+:: Tak/Niedźwiedź {"position":"200,300","size":"100,100"}
+Idziesz do lasu i spotykasz niedźwiedzia.
+Czy chcesz z nim walczyć?
+
+[[Tak/Przegrałeś1]]
+[[Nie/Dom]]
+
+
+:: Tak/Przegrałeś1 {"position":"100,500","size":"100,100"}
+Niespodziewanie niedźwiedź okazał się silniejszy.
+Przegrałeś. 
+
+
+
+:: Tak/Przegrałeś2 {"position":"500,500","size":"100,100"}
+Niespodziewanie rekin ma ostrzejsze zęby od ciebie i cię zjada.
+Przegrałeś.
